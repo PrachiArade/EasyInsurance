@@ -1,0 +1,82 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!--linking css to html-->
+
+   <body>
+      <h1>
+         <center>
+         <a href="#" class="logo"><span>I</span>nsurance  <span>M</span>anagement</a>
+      </h1>
+      <h4>
+         <center>
+         <a href="#" class="logo"> Sign Up below To See Your Best Insurance Bet </a>
+      </h4>
+
+      <form action ="/registerSubmit" method ="GET">
+         <input type="hidden" name="id" value="${formBeanKey.id}">
+         <table class= "center">
+         <tr>
+         <div>
+                       <c:forEach items="${formBeanKey.errorMessages}" var="message">
+                          <span style="color:red">${message}</span><br>
+                       </c:forEach>
+                    </div>
+         </tr>
+            <tr>
+               <td> First Name: </td>
+               <td><input type="text" class="form-control" id="firstName" name = "firstName" placeholder="Enter First Name"  value="${formBeanKey.firstName}" >
+            </tr>
+
+            <tr>
+               <td> Last Name: </td>
+               <td><input type="text" class="form-control" id="LastName" name = "lastName" placeholder="Enter Last Name"  minlength="1" maxlength="20" >
+            </tr>
+
+            <tr>
+               <td> UserName(Email): </td>
+               <td><input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" type="email" id="Email" name = "email" placeholder="Enter your Email" value="${formBeanKey.email}" >
+            </tr>
+
+            <tr>
+               <td> Phone: </td>
+               <td><input type="text" id="Phone" class="form-control" name = "phone" placeholder="Enter Phone Number"  minlength="10" maxlength="10">
+            </tr>
+
+            <tr>
+               <td> Password: </td>
+               <td><input type="password" class="form-control" id="txtNewSecPass" name = "password" placeholder="Enter Password" value="${formBeanKey.password}" >
+            </tr>
+
+            <tr>
+               <td> Confirm Password: </td>
+               <td><input type="password" class="form-control" id="txtConfirmSecPass" name = "confirmPassword" placeholder="Enter Confirm Password" value="${formBeanKey.confirmPassword}" >
+            </tr>
+            <tr>
+               <td>User Type </td>
+               <td>
+               <select class="form-control">
+               <option value="User">User</option>
+               <option value="Admin">Admin</option>
+
+               </select>
+
+            </tr>
+            <tr>
+
+               <td><input type = "submit" class="btn btn-primary"name= "register" placeholder="registerSubmit" ></td>
+            </tr>
+
+            <tr>
+               <td>
+                  <li><a href="/login/login"> Already Registered ? Click here to login </li>
+                  </a>
+               </td>
+            </tr>
+         </table>
+      </form>
+
+   </body>
+</html>

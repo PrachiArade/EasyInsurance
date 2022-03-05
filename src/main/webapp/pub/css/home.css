@@ -1,0 +1,51 @@
+
+
+ h4{
+ color :Blue;
+ }
+
+.center {
+   margin-left: auto;
+   margin-right: auto;
+   font-size :120%;
+ }
+
+ .centerP {
+   margin-left: auto;
+   margin-right: auto;
+   font-size :120%;
+ }
+
+
+ *{
+      box-sizing :Border-box;
+  }
+ .column{
+
+   float : left;
+   width : 33.33%;
+   padding : 10px;
+ }
+
+ .row ::after{
+   content: "";
+   display:table;
+   clear : both;
+ }
+
+ .centered {
+
+  width:100%;
+  display: flex;
+  justify-content: center;
+  color:red;
+ }
+ .navbar ul {
+   list-style-type: none;
+   padding: 0;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   flex-wrap: nowrap; /* assumes you only want one row */
+ }
+
